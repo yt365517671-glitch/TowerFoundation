@@ -1,0 +1,440 @@
+<Window x:Class="TowerFoundation.Desktop.SmartSpecialtyCompletionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="专业参数调整"
+        Width="940"
+        Height="780"
+        MinWidth="820"
+        MinHeight="650"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="116" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="76" />
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource BrandGradientBrush}">
+            <Grid Margin="30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="专业参数调整"
+                               Foreground="White"
+                               FontSize="26"
+                               FontWeight="Bold" />
+                    <TextBlock Margin="0,7,0,0"
+                               Text="主页面已可自动补齐并继续；这里只用于查看或修改少数专业参数。"
+                               Foreground="#DCE1F4"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+                <Button Grid.Column="1"
+                        Width="150"
+                        Height="52"
+                        VerticalAlignment="Center"
+                        Content="恢复安全候选值"
+                        Click="ApplyRecommendedDefaults_Click" />
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="26,22,26,28">
+                <Border Padding="16,12"
+                        Margin="0,0,0,16"
+                        Background="#EEF1FF"
+                        BorderBrush="#D9DEFF"
+                        BorderThickness="1"
+                        CornerRadius="12">
+                    <TextBlock x:Name="SummaryText"
+                               TextWrapping="Wrap"
+                               FontWeight="SemiBold"
+                               Foreground="#383A91" />
+                </Border>
+
+                <Border x:Name="DeformationCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="桩顶变形限值" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="刚性短柱桩和独立灌注桩适用。数值应来自塔型技术条件、塔脚连接要求或项目专项要求，软件不静默猜测。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="2">
+                            <StackPanel Margin="0,0,10,10">
+                                <TextBlock Text="允许位移（mm）" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Deformation.AllowableTopDisplacementMm, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                            <StackPanel Margin="10,0,0,10">
+                                <TextBlock Text="允许转角（rad）" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Deformation.AllowableTopRotationRad, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Text="来源文件 / 图号" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Deformation.Source.SourceDocument, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                            <StackPanel Margin="10,0,0,0">
+                                <TextBlock Text="页码 / 条款 / 说明" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Deformation.Source.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="SettlementCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="地基最终沉降" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="软件按基础形式和结构高度预填规范允许沉降，并预填经验系数1.0；分层厚度及Es优先采用已从地勘提取的数据，缺失时转专业核对。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="2" Margin="0,0,0,10">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Text="允许沉降（mm）" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Settlement.AllowableSettlementMm, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                            <StackPanel x:Name="SettlementExperiencePanel" Margin="10,0,0,0">
+                                <TextBlock Text="经验系数 ψs" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Settlement.ExperienceCoefficient, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </UniformGrid>
+                        <DataGrid x:Name="SettlementLayerGrid"
+                                  ItemsSource="{Binding Project.FoundationSettings.SpecialtyDesign.Settlement.SoilLayers}"
+                                  Height="164"
+                                  AutoGenerateColumns="False"
+                                  CanUserAddRows="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="土层" Width="*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                <DataGridTextColumn Header="厚度 hi（m）" Width="170" Binding="{Binding ThicknessM, UpdateSourceTrigger=PropertyChanged}" />
+                                <DataGridTextColumn Header="压缩模量 Es（MPa）" Width="210" Binding="{Binding CompressionModulusMpa, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Border x:Name="PileSettlementPanel"
+                                Margin="0,10,0,0"
+                                Padding="13"
+                                Background="#F5F6FF"
+                                BorderBrush="#D8D9FF"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <StackPanel>
+                                <TextBlock Text="单桩沉降方法" Style="{StaticResource FieldLabelStyle}" />
+                                <ComboBox ItemsSource="{Binding PileSettlementMethodChoices}"
+                                          DisplayMemberPath="Name"
+                                          SelectedValuePath="Value"
+                                          SelectedValue="{Binding Project.FoundationSettings.Pile.SettlementMethod, Mode=TwoWay}" />
+                                <UniformGrid Columns="2" Margin="0,10,0,0">
+                                    <StackPanel Margin="0,0,10,0">
+                                        <TextBlock Text="经审查专项沉降（mm，适用时）" Style="{StaticResource FieldLabelStyle}" />
+                                        <TextBox Text="{Binding Project.FoundationSettings.Pile.ServiceSettlementFromTestOrSpecialCalculationMm, UpdateSourceTrigger=PropertyChanged}" />
+                                    </StackPanel>
+                                    <StackPanel Margin="10,0,0,0">
+                                        <TextBlock Text="沉降数据来源 / 试桩编号" Style="{StaticResource FieldLabelStyle}" />
+                                        <TextBox Text="{Binding Project.FoundationSettings.Pile.SettlementSource.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                                    </StackPanel>
+                                </UniformGrid>
+                                <Expander Header="静载试验 Q-s 曲线（至少2点，禁止超范围外推）" Margin="0,10,0,0">
+                                    <DataGrid ItemsSource="{Binding Project.FoundationSettings.Pile.StaticLoadTestCurve}"
+                                              Height="150"
+                                              Margin="0,8,0,0"
+                                              AutoGenerateColumns="False"
+                                              CanUserAddRows="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="荷载 Q（kN）" Width="*" Binding="{Binding LoadKn, UpdateSourceTrigger=PropertyChanged}" />
+                                            <DataGridTextColumn Header="沉降 s（mm）" Width="*" Binding="{Binding SettlementMm, UpdateSourceTrigger=PropertyChanged}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Expander>
+                                <Expander Header="负摩阻力（地勘明确存在风险时启用）" Margin="0,10,0,0">
+                                    <StackPanel Margin="0,8,0,0">
+                                        <CheckBox Content="计入桩侧负摩阻下拉荷载"
+                                                  IsChecked="{Binding Project.FoundationSettings.Pile.UseNegativeSkinFriction, Mode=TwoWay}" />
+                                        <DataGrid ItemsSource="{Binding Project.FoundationSettings.Pile.NegativeSkinFrictionLayers}"
+                                                  Height="150"
+                                                  Margin="0,8,0,0"
+                                                  AutoGenerateColumns="False"
+                                                  CanUserAddRows="True">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="土层" Width="*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                                <DataGridTextColumn Header="厚度（m）" Width="150" Binding="{Binding ThicknessM, UpdateSourceTrigger=PropertyChanged}" />
+                                                <DataGridTextColumn Header="单位负摩阻 qni（kPa）" Width="220" Binding="{Binding UnitNegativeSkinFrictionKpa, UpdateSourceTrigger=PropertyChanged}" />
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock Margin="0,8,0,0" Text="地勘页码 / 参数依据" Style="{StaticResource FieldLabelStyle}" />
+                                        <TextBox Text="{Binding Project.FoundationSettings.Pile.NegativeSkinFrictionSource.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                                    </StackPanel>
+                                </Expander>
+                                <TextBlock Margin="0,8,0,0"
+                                           Text="静载曲线在服务荷载处内插；专项结果直接比较允许值；Mindlin只给复核量级，不判通过。"
+                                           Foreground="{StaticResource MutedTextBrush}"
+                                           TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+                        <UniformGrid Columns="2" Margin="0,10,0,0">
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Text="来源文件" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Settlement.Source.SourceDocument, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                            <StackPanel Margin="10,0,0,0">
+                                <TextBlock Text="表号 / 页码 / 说明" Style="{StaticResource FieldLabelStyle}" />
+                                <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Settlement.Source.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="PedestalStructuralCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="独立基础短柱结构与配筋" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="已给出C30级材料和常用配筋候选。点击应用表示按本项目确认，软件将自动计算双向受弯、轴力－弯矩、受剪、纵筋和箍筋。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="4">
+                            <StackPanel Margin="0,0,10,10"><TextBlock Text="混凝土fc（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.ConcreteCompressiveStrengthMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,10"><TextBlock Text="纵筋根数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.LongitudinalBarCount, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,10"><TextBlock Text="纵筋直径（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.LongitudinalBarDiameterMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,10"><TextBlock Text="最小配筋率" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.MinimumLongitudinalReinforcementRatio, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="0,0,10,0"><TextBlock Text="箍筋直径（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.StirrupDiameterMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="箍筋间距（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.StirrupSpacingMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="箍筋肢数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.StirrupLegCount, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,0"><TextBlock Text="材料/配筋来源" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.PedestalStructure.Source.SourceLocation, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="PileStructuralCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="独立灌注桩m法、桩身与连梁" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="m值决定桩身弯矩和位移；材料与配筋已有候选。三桩/四桩连梁只有在整体分析给出控制内力后才自动配筋，不做平均分摊。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="4">
+                            <StackPanel Margin="0,0,10,10"><TextBlock Text="m（MN/m⁴）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.HorizontalResistanceCoefficientMnPerM4, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,10"><TextBlock Text="混凝土Ec（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.ConcreteElasticModulusMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,10"><TextBlock Text="混凝土fc（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.ConcreteCompressiveStrengthMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,10"><TextBlock Text="桩身纵筋根数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.PileMainBarCount, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="0,0,10,0"><TextBlock Text="纵筋直径（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.PileMainBarDiameterMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="箍筋直径（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.StirrupDiameterMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="箍筋间距（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.StirrupSpacingMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,0"><TextBlock Text="箍筋肢数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.StirrupLegCount, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                        </UniformGrid>
+                        <Expander Header="桩顶结构包络与连梁控制内力（有资料时填写）" Margin="0,13,0,0">
+                            <StackPanel Margin="0,10,0,0">
+                                <TextBlock Text="填入非零桩顶水平力/弯矩时优先采用；均为0时使用项目基本组合或单塔腿反力。" Foreground="{StaticResource MutedTextBrush}" TextWrapping="Wrap" />
+                                <UniformGrid Columns="3" Margin="0,10,0,0">
+                                    <StackPanel Margin="0,0,10,10"><TextBlock Text="桩顶水平力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.MaximumPileHeadHorizontalKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0,10,10"><TextBlock Text="桩顶弯矩（kN·m）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.MaximumPileHeadMomentKnM, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0,0,10"><TextBlock Text="连梁轴向拉力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.TieBeamAxialTensionKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="0,0,10,0"><TextBlock Text="连梁弯矩（kN·m）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.TieBeamMomentKnM, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0,10,0"><TextBlock Text="连梁剪力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.TieBeamShearKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0,0,0"><TextBlock Text="连梁纵筋 根数 / 直径" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.Pile.TieBeamMainBarCount, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                </UniformGrid>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="HighWaterCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="设计最高水位抗浮" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="常年水位继续用于自重修正；这里单独填写设计最高地下水位，用于GB 50007式(5.4.3)抗浮稳定。两者不再混用。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="3">
+                            <StackPanel Margin="0,0,10,0"><TextBlock Text="设计最高水位埋深（m）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Hydrogeology.DesignHighGroundwaterDepthM, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="抗浮安全系数 Kw" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Hydrogeology.AntiFlotationSafetyFactor, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,0"><TextBlock Text="地勘页码 / 水文依据" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Hydrogeology.Source.SourceLocation, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="CrackCard" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="正常使用裂缝宽度" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="先选一个容易理解的使用环境。普通室外预填0.20 mm；腐蚀、滨海或特殊介质环境将继续保留专项复核。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Text="使用环境" Style="{StaticResource FieldLabelStyle}" />
+                        <ComboBox x:Name="CrackEnvironmentComboBox"
+                                  ItemsSource="{Binding CrackEnvironmentChoices}"
+                                  SelectionChanged="CrackEnvironmentComboBox_SelectionChanged" />
+                        <Expander Header="高级参数（一般无需修改）" Margin="0,12,0,0">
+                            <UniformGrid Columns="3" Margin="0,10,0,0">
+                                <StackPanel Margin="0,0,10,0">
+                                    <TextBlock Text="最大裂缝宽度（mm）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Crack.MaximumCrackWidthMm, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0">
+                                    <TextBlock Text="混凝土 ftk（MPa）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Crack.ConcreteTensileStrengthStandardMpa, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="钢筋 Es（MPa）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.Crack.ReinforcementElasticModulusMpa, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                            </UniformGrid>
+                        </Expander>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="塔脚连接与锚栓" Style="{StaticResource SectionTitleStyle}" />
+                                <TextBlock Text="先选连接方式；只有锚栓笼连接才要求填写锚栓参数。"
+                                           Foreground="{StaticResource MutedTextBrush}" />
+                            </StackPanel>
+                            <Button Grid.Column="1"
+                                    Margin="18,0,0,0"
+                                    Content="从PDF / Word详图识别"
+                                    Click="ImportAnchorDrawing_Click" />
+                        </Grid>
+                        <TextBlock Text="连接方式" Style="{StaticResource FieldLabelStyle}" />
+                        <ComboBox x:Name="AnchorConnectionComboBox"
+                                  ItemsSource="{Binding AnchorConnectionChoices}"
+                                  DisplayMemberPath="Name"
+                                  SelectedValuePath="Value"
+                                  SelectedValue="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ConnectionType, Mode=TwoWay}"
+                                  SelectionChanged="AnchorConnectionComboBox_SelectionChanged" />
+
+                        <StackPanel x:Name="AnchorParametersPanel" Margin="0,12,0,0">
+                            <UniformGrid Columns="3">
+                                <StackPanel Margin="0,0,10,10">
+                                    <TextBlock Text="锚栓数量" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.BoltCount, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0,10,10">
+                                    <TextBlock Text="公称直径（mm）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.NominalDiameterMm, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0,0,10">
+                                    <TextBlock Text="材质牌号" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.MaterialGrade, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="0,0,10,0">
+                                    <TextBlock Text="锚栓圆直径（m）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.BoltCircleDiameterM, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0,10,0">
+                                    <TextBlock Text="埋深（m）" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.EmbedmentDepthM, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="来源图号 / 位置" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.Source.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                            </UniformGrid>
+                            <Expander Header="高级强度参数（按材料资料填写）" Margin="0,12,0,0">
+                                <UniformGrid Columns="3" Margin="0,10,0,0">
+                                    <StackPanel Margin="0,0,10,0"><TextBlock Text="抗拉设计值（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.TensileStrengthDesignMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0"><TextBlock Text="抗剪设计值（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ShearStrengthDesignMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    <StackPanel Margin="10,0,0,0"><TextBlock Text="螺纹有效面积系数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ThreadStressAreaFactor, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                </UniformGrid>
+                            </Expander>
+                            <Expander Header="下锚板与混凝土节点承载力（从完整节点计算读取）" Margin="0,10,0,0">
+                                <StackPanel Margin="0,10,0,0">
+                                    <UniformGrid Columns="3">
+                                        <StackPanel Margin="0,0,10,10"><TextBlock Text="下锚板外径（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.AnchorPlateOuterDiameterMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,10,10"><TextBlock Text="下锚板厚度（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.AnchorPlateThicknessMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,0,10"><TextBlock Text="下锚板钢材fy（MPa）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.AnchorPlateSteelYieldStrengthMpa, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="0,0,10,0"><TextBlock Text="单根锥体承载力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ConcreteBreakoutCapacityKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,10,0"><TextBlock Text="单根拔出承载力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.PulloutCapacityKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,0,0"><TextBlock Text="单根边缘承载力（kN）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.EdgeBreakoutCapacityKn, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    </UniformGrid>
+                                    <TextBlock Margin="0,10,0,0" Text="节点计算页码 / 图号" Style="{StaticResource FieldLabelStyle}" />
+                                    <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ConcreteCapacitySource.SourceLocation, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                            </Expander>
+                            <Expander Header="程序执行已确认的锚栓混凝土破坏模型（高级）" Margin="0,10,0,0">
+                                <StackPanel Margin="0,10,0,0">
+                                    <CheckBox Content="启用程序模型（不启用时继续填写外部节点承载力）"
+                                              IsChecked="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.UseProgramCalculatedConcreteCapacity, Mode=TwoWay}" />
+                                    <UniformGrid Columns="4" Margin="0,10,0,0">
+                                        <StackPanel Margin="0,0,10,10"><TextBlock Text="构件厚度（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ConcreteMemberThicknessMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,10,10"><TextBlock Text="最小边距（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.MinimumAnchorEdgeDistanceMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,10,10"><TextBlock Text="最小间距（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.MinimumAnchorSpacingMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,0,10"><TextBlock Text="有效埋深 hef（mm）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.EffectiveEmbedmentDepthMm, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="0,0,10,0"><TextBlock Text="锥体模型系数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ConcreteBreakoutCoefficient, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0"><TextBlock Text="拔出模型系数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.PulloutBearingCoefficient, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0"><TextBlock Text="边缘模型系数" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.EdgeBreakoutCoefficient, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                        <StackPanel Margin="10,0,0,0"><TextBlock Text="公式来源 / 条款" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.AnchorBolts.ProgramConcreteModelSource.SourceLocation, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                                    </UniformGrid>
+                                    <TextBlock Margin="0,8,0,0"
+                                               Text="三类系数必须来自本项目采用并经确认的权威模型；软件不预填系数，也不把AI建议当作规范值。"
+                                               Foreground="{StaticResource MutedTextBrush}"
+                                               TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Expander>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="抗震与特殊地基场景" Style="{StaticResource SectionTitleStyle}" />
+                        <TextBlock Margin="0,0,0,13"
+                                   Text="先把基本参数和三类风险逐项选清楚。无风险可结束待补状态；存在风险则自动转入对应专项处理，不会误报为通过。"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   TextWrapping="Wrap" />
+                        <UniformGrid Columns="3">
+                            <StackPanel Margin="0,0,10,10"><TextBlock Text="设防烈度" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.Geotechnical.SeismicIntensityDegree, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,10"><TextBlock Text="设计基本加速度（g）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.Geotechnical.DesignBasicGroundAccelerationG, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,10"><TextBlock Text="设计地震分组" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.Geotechnical.DesignEarthquakeGroup, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="0,0,10,0"><TextBlock Text="场地类别" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.Geotechnical.SiteClass, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="特征周期（s）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.Geotechnical.CharacteristicPeriodS, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,0"><TextBlock Text="湿陷性黄土" Style="{StaticResource FieldLabelStyle}" /><ComboBox ItemsSource="{Binding RiskStateChoices}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Project.FoundationSettings.SpecialtyDesign.SpecialGround.CollapsibleLoess, Mode=TwoWay}" /></StackPanel>
+                        </UniformGrid>
+                        <UniformGrid Columns="3" Margin="0,12,0,0">
+                            <StackPanel Margin="0,0,10,0"><TextBlock Text="地震液化" Style="{StaticResource FieldLabelStyle}" /><ComboBox ItemsSource="{Binding RiskStateChoices}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Project.FoundationSettings.SpecialtyDesign.SpecialGround.Liquefaction, Mode=TwoWay}" /></StackPanel>
+                            <StackPanel Margin="10,0,10,0"><TextBlock Text="冻胀" Style="{StaticResource FieldLabelStyle}" /><ComboBox ItemsSource="{Binding RiskStateChoices}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Project.FoundationSettings.SpecialtyDesign.SpecialGround.FrostHeave, Mode=TwoWay}" /></StackPanel>
+                            <StackPanel Margin="10,0,0,0"><TextBlock Text="设计冻深（m，适用时）" Style="{StaticResource FieldLabelStyle}" /><TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.SpecialGround.DesignFrostDepthM, UpdateSourceTrigger=PropertyChanged}" /></StackPanel>
+                        </UniformGrid>
+                        <TextBlock Margin="0,12,0,0" Text="地勘结论 / 处理措施 / 页码" Style="{StaticResource FieldLabelStyle}" />
+                        <TextBox Text="{Binding Project.FoundationSettings.SpecialtyDesign.SpecialGround.TreatmentDescription, UpdateSourceTrigger=PropertyChanged}"
+                                 MinHeight="70"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="ProgressPanel"
+                        Padding="16,13"
+                        Background="#F3F5FF"
+                        CornerRadius="12"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock x:Name="ProgressText" FontWeight="SemiBold" />
+                        <ProgressBar x:Name="AiProgressBar" Margin="0,9,0,0" Height="8" Minimum="0" Maximum="100" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+            <Grid Margin="26,14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="FooterHintText"
+                           VerticalAlignment="Center"
+                           Foreground="{StaticResource MutedTextBrush}"
+                           Text="候选值应用后会立即重新计算；仍缺的专业参数将继续明确列出。" />
+                <Button Grid.Column="1" Width="110" Margin="0,0,10,0" Content="取消" Click="Cancel_Click" />
+                <Button Grid.Column="2" Width="170" Content="应用并重新计算" Style="{StaticResource PrimaryButtonStyle}" Click="ApplyAndClose_Click" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

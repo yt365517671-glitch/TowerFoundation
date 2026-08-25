@@ -1,0 +1,35 @@
+name: Public source build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Audit public files
+        shell: pwsh
+        run: ./scripts/verify-public-source.ps1
+
+      - name: Restore
+        run: dotnet restore TowerFoundation.slnx
+
+      - name: Build
+        run: dotnet build TowerFoundation.slnx --configuration Release --no-restore --maxcpucount:1
+
+      - name: Run deterministic regression harness
+        run: dotnet run --project tests/TowerFoundation.Tests/TowerFoundation.Tests.csproj --configuration Release --no-build

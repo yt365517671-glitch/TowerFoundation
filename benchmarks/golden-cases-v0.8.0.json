@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "productVersion": "0.8.0",
+  "rulePackVersion": "ThirdRound-2026.08.08",
+  "purpose": "六类基础的版本锁定回归索引；用于防止代码修改造成数值漂移，不替代第三方审图或试验验证。",
+  "cases": [
+    {
+      "caseId": "GOLD-RECT-001",
+      "foundationType": "RectangularShortColumn",
+      "runnerTestName": "独立基础－矩形柱校核",
+      "lockedMetrics": {
+        "concreteM3": 12.768,
+        "bearingAverageKpa": 47.4646666667
+      },
+      "absoluteTolerance": 0.000001,
+      "reference": "tests/TowerFoundation.Tests/Program.cs::TestFoundationChecks"
+    },
+    {
+      "caseId": "GOLD-CIRC-001",
+      "foundationType": "CircularShortColumn",
+      "runnerTestName": "独立基础－圆形柱计算",
+      "lockedMetrics": {
+        "concreteM3": 7.80318530718
+      },
+      "absoluteTolerance": 0.000001,
+      "reference": "tests/TowerFoundation.Tests/Program.cs::TestCircularShortColumnFoundation"
+    },
+    {
+      "caseId": "GOLD-RAFT-001",
+      "foundationType": "Raft",
+      "runnerTestName": "中央塔柱筏板基础计算",
+      "lockedMetrics": {
+        "concreteM3": 23.888
+      },
+      "absoluteTolerance": 0.000001,
+      "reference": "tests/TowerFoundation.Tests/Program.cs::TestRaftFoundation"
+    },
+    {
+      "caseId": "GOLD-RIGID-ROUND-001",
+      "foundationType": "RigidShortPile",
+      "runnerTestName": "刚性短柱桩原计算书回归与导出",
+      "lockedMetrics": {
+        "overturningDemandKnM": 1954.68,
+        "overturningCapacityKnM": 1941.02
+      },
+      "absoluteTolerance": 0.08,
+      "reference": "单管塔规程计算刚性桩(yy).xls数值回归；精确求根结果锁定"
+    },
+    {
+      "caseId": "GOLD-RIGID-RECT-001",
+      "foundationType": "RigidRectangularShortPile",
+      "runnerTestName": "矩形刚性短柱桩双向计算与导出",
+      "lockedMetrics": {
+        "concreteM3": 20.16
+      },
+      "absoluteTolerance": 0.001,
+      "reference": "tests/TowerFoundation.Tests/Program.cs::TestRigidRectangularShortPileFoundation"
+    },
+    {
+      "caseId": "GOLD-PILE-001",
+      "foundationType": "Pile",
+      "runnerTestName": "单桩灌注桩抗压抗拔与水平承载力",
+      "lockedMetrics": {
+        "concreteM3": 9.6603974103
+      },
+      "absoluteTolerance": 0.000001,
+      "reference": "tests/TowerFoundation.Tests/Program.cs::TestPileFoundation"
+    }
+  ]
+}

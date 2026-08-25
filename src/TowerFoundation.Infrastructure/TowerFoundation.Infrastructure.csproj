@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\TowerFoundation.Application\TowerFoundation.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PdfPig" Version="0.1.15" />
+    <PackageReference Include="PDFtoImage" Version="5.2.1" />
+    <PackageReference Include="TesseractOCR" Version="5.5.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\*.json"
+                      Exclude="Data\enterprise-tower-load-library-*.public.json" />
+    <EmbeddedResource Include="..\..\标准图集荷载库\提取结果\企业标准塔型荷载库-v2.json"
+                      Condition="Exists('..\..\标准图集荷载库\提取结果\企业标准塔型荷载库-v2.json')"
+                      Link="Data\enterprise-tower-load-library-v2.json"
+                      LogicalName="TowerFoundation.Infrastructure.Data.enterprise-tower-load-library-v2.json" />
+    <EmbeddedResource Include="Data\enterprise-tower-load-library-v2.public.json"
+                      Condition="!Exists('..\..\标准图集荷载库\提取结果\企业标准塔型荷载库-v2.json')"
+                      LogicalName="TowerFoundation.Infrastructure.Data.enterprise-tower-load-library-v2.json" />
+    <EmbeddedResource Include="..\..\标准图集荷载库\提取结果\企业标准塔型荷载库.json"
+                      Condition="Exists('..\..\标准图集荷载库\提取结果\企业标准塔型荷载库.json')"
+                      Link="Data\enterprise-tower-load-library-legacy.json"
+                      LogicalName="TowerFoundation.Infrastructure.Data.enterprise-tower-load-library-legacy.json" />
+    <EmbeddedResource Include="Data\enterprise-tower-load-library-legacy.public.json"
+                      Condition="!Exists('..\..\标准图集荷载库\提取结果\企业标准塔型荷载库.json')"
+                      LogicalName="TowerFoundation.Infrastructure.Data.enterprise-tower-load-library-legacy.json" />
+    <EmbeddedResource Include="OcrData\*.traineddata" />
+    <EmbeddedResource Include="Assets\CadFonts\simplex.shx"
+                      Condition="Exists('Assets\CadFonts\simplex.shx')"
+                      LogicalName="TowerFoundation.Infrastructure.CadFonts.simplex.shx" />
+    <EmbeddedResource Include="Assets\CadFonts\gbcbig.shx"
+                      Condition="Exists('Assets\CadFonts\gbcbig.shx')"
+                      LogicalName="TowerFoundation.Infrastructure.CadFonts.gbcbig.shx" />
+  </ItemGroup>
+</Project>

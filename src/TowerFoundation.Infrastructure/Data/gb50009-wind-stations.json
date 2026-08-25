@@ -1,0 +1,1402 @@
+[
+  {
+    "province": "上海市",
+    "city": "上海市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-01，人工核对）"
+  },
+  {
+    "province": "云南省",
+    "city": "临沧市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-42）"
+  },
+  {
+    "province": "云南省",
+    "city": "丽江市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-42）"
+  },
+  {
+    "province": "云南省",
+    "city": "保山市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-42）"
+  },
+  {
+    "province": "云南省",
+    "city": "大理市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-42）"
+  },
+  {
+    "province": "云南省",
+    "city": "楚雄市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-42）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "乌拉特中旗",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "乌拉特后旗",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "包头市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "巴林左旗",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-07）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "新巴尔虎右旗",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-04）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "杭锦后旗",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "牙克石市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-04）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "苏尼特右旗",
+    "tenYearKpa": 0.5,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "苏尼特左旗",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "赤峰市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-07）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "通辽市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-07）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "阿拉善左旗",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-06）"
+  },
+  {
+    "province": "内蒙古自治区",
+    "city": "额济纳旗",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-05）"
+  },
+  {
+    "province": "北京市",
+    "city": "北京市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-01，人工核对）"
+  },
+  {
+    "province": "台湾省",
+    "city": "台中市",
+    "tenYearKpa": 0.5,
+    "fiftyYearKpa": 0.8,
+    "hundredYearKpa": 0.9,
+    "sourcePage": "GB 50009-2012 表E.5（e5-44）"
+  },
+  {
+    "province": "台湾省",
+    "city": "台南市",
+    "tenYearKpa": 0.6,
+    "fiftyYearKpa": 0.85,
+    "hundredYearKpa": 1.0,
+    "sourcePage": "GB 50009-2012 表E.5（e5-44）"
+  },
+  {
+    "province": "吉林省",
+    "city": "四平市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-10）"
+  },
+  {
+    "province": "吉林省",
+    "city": "延吉市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-11）"
+  },
+  {
+    "province": "吉林省",
+    "city": "扶余市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-10）"
+  },
+  {
+    "province": "吉林省",
+    "city": "白城市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-09）"
+  },
+  {
+    "province": "吉林省",
+    "city": "通化市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-11）"
+  },
+  {
+    "province": "吉林省",
+    "city": "长春市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-09）"
+  },
+  {
+    "province": "吉林省",
+    "city": "集安市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-11）"
+  },
+  {
+    "province": "四川省",
+    "city": "内江市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-40）"
+  },
+  {
+    "province": "四川省",
+    "city": "南充市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-40）"
+  },
+  {
+    "province": "四川省",
+    "city": "宜宾市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-39）"
+  },
+  {
+    "province": "四川省",
+    "city": "巴中市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-40）"
+  },
+  {
+    "province": "四川省",
+    "city": "绵阳市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-39）"
+  },
+  {
+    "province": "四川省",
+    "city": "资阳市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-39）"
+  },
+  {
+    "province": "四川省",
+    "city": "遂宁市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-40）"
+  },
+  {
+    "province": "四川省",
+    "city": "雅安市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-39）"
+  },
+  {
+    "province": "天津市",
+    "city": "天津市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-01，人工核对）"
+  },
+  {
+    "province": "安徽省",
+    "city": "六安市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-18）"
+  },
+  {
+    "province": "安徽省",
+    "city": "合肥市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-18）"
+  },
+  {
+    "province": "安徽省",
+    "city": "和县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-27）"
+  },
+  {
+    "province": "安徽省",
+    "city": "安庆市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-18）"
+  },
+  {
+    "province": "安徽省",
+    "city": "蚌埠市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-18）"
+  },
+  {
+    "province": "安徽省",
+    "city": "黄山市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-18）"
+  },
+  {
+    "province": "山东省",
+    "city": "临沂市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "山东省",
+    "city": "威海市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "德州市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "山东省",
+    "city": "日照市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "山东省",
+    "city": "泰安市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "济南市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "山东省",
+    "city": "潍坊市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "烟台市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "荣成市",
+    "tenYearKpa": 0.6,
+    "fiftyYearKpa": 0.7,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "青岛市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-14）"
+  },
+  {
+    "province": "山东省",
+    "city": "龙口市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "山西省",
+    "city": "临汾市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-04）"
+  },
+  {
+    "province": "山西省",
+    "city": "运城市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-04）"
+  },
+  {
+    "province": "山西省",
+    "city": "长治市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-04）"
+  },
+  {
+    "province": "广东省",
+    "city": "广州市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-36）"
+  },
+  {
+    "province": "广东省",
+    "city": "河源市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-36）"
+  },
+  {
+    "province": "广东省",
+    "city": "湛江市",
+    "tenYearKpa": 0.5,
+    "fiftyYearKpa": 0.8,
+    "hundredYearKpa": 0.95,
+    "sourcePage": "GB 50009-2012 表E.5（e5-36）"
+  },
+  {
+    "province": "广东省",
+    "city": "阳江市",
+    "tenYearKpa": 0.45,
+    "fiftyYearKpa": 0.75,
+    "hundredYearKpa": 0.9,
+    "sourcePage": "GB 50009-2012 表E.5（e5-36）"
+  },
+  {
+    "province": "广西壮族自治区",
+    "city": "南宁市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-37）"
+  },
+  {
+    "province": "广西壮族自治区",
+    "city": "柳州市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-37）"
+  },
+  {
+    "province": "广西壮族自治区",
+    "city": "桂林市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-37）"
+  },
+  {
+    "province": "广西壮族自治区",
+    "city": "玉林市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-37）"
+  },
+  {
+    "province": "广西壮族自治区",
+    "city": "百色市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-37）"
+  },
+  {
+    "province": "新疆维吾尔自治区",
+    "city": "乌鲁木齐市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-28）"
+  },
+  {
+    "province": "新疆维吾尔自治区",
+    "city": "伊宁市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-28）"
+  },
+  {
+    "province": "新疆维吾尔自治区",
+    "city": "哈密市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-29）"
+  },
+  {
+    "province": "江苏省",
+    "city": "东台市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-16）"
+  },
+  {
+    "province": "江苏省",
+    "city": "南京市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江苏省",
+    "city": "南通市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-16）"
+  },
+  {
+    "province": "江苏省",
+    "city": "常州市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-16）"
+  },
+  {
+    "province": "江苏省",
+    "city": "徐州市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江苏省",
+    "city": "无锡市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江苏省",
+    "city": "泰州市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江苏省",
+    "city": "盐城市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-16）"
+  },
+  {
+    "province": "江苏省",
+    "city": "连云港市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江苏省",
+    "city": "镇江市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-15）"
+  },
+  {
+    "province": "江西省",
+    "city": "九江市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-19）"
+  },
+  {
+    "province": "江西省",
+    "city": "南昌市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-19）"
+  },
+  {
+    "province": "江西省",
+    "city": "景德镇市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-19）"
+  },
+  {
+    "province": "江西省",
+    "city": "樟树市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-19）"
+  },
+  {
+    "province": "河北省",
+    "city": "唐山市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河北省",
+    "city": "张家口市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河北省",
+    "city": "承德市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河北省",
+    "city": "石家庄市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河北省",
+    "city": "秦皇岛市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河北省",
+    "city": "邢台市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-02）"
+  },
+  {
+    "province": "河南省",
+    "city": "三门峡市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "信阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "河南省",
+    "city": "南阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "商丘市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "河南省",
+    "city": "安阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "新乡市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "洛阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "许昌市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "郑州市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-32）"
+  },
+  {
+    "province": "河南省",
+    "city": "驻马店市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "浙江省",
+    "city": "临海市",
+    "tenYearKpa": 0.6,
+    "fiftyYearKpa": 0.9,
+    "hundredYearKpa": 1.05,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "浙江省",
+    "city": "丽水市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "浙江省",
+    "city": "宁波市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "浙江省",
+    "city": "杭州市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-16）"
+  },
+  {
+    "province": "浙江省",
+    "city": "温州市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "浙江省",
+    "city": "象山县",
+    "tenYearKpa": 0.75,
+    "fiftyYearKpa": 1.2,
+    "hundredYearKpa": 1.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "浙江省",
+    "city": "金华市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-17）"
+  },
+  {
+    "province": "湖北省",
+    "city": "宜昌市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-34）"
+  },
+  {
+    "province": "湖北省",
+    "city": "恩施市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "湖北省",
+    "city": "武汉市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "湖北省",
+    "city": "老河口市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "湖北省",
+    "city": "麻城市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-33）"
+  },
+  {
+    "province": "湖北省",
+    "city": "黄石市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-34）"
+  },
+  {
+    "province": "湖南省",
+    "city": "南县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-34）"
+  },
+  {
+    "province": "湖南省",
+    "city": "吉首市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "岳阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-34）"
+  },
+  {
+    "province": "湖南省",
+    "city": "常德市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "沅江市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "衡阳市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "邵阳市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "郴州市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-35）"
+  },
+  {
+    "province": "湖南省",
+    "city": "长沙市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-34）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "临夏市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "临洮县",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "兰州市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "合作市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "夏河县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "天水市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "平凉市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "张掖市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "景泰县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "武威市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "武都区",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "民勤县",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "玛曲县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "环县",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "西峰区",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-24，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "酒泉市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "甘肃省",
+    "city": "靖远县",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23，人工核对）"
+  },
+  {
+    "province": "福建省",
+    "city": "南平市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-20）"
+  },
+  {
+    "province": "福建省",
+    "city": "厦门市",
+    "tenYearKpa": 0.5,
+    "fiftyYearKpa": 0.8,
+    "hundredYearKpa": 0.95,
+    "sourcePage": "GB 50009-2012 表E.5（e5-21）"
+  },
+  {
+    "province": "福建省",
+    "city": "德化县",
+    "tenYearKpa": 0.6,
+    "fiftyYearKpa": 0.8,
+    "hundredYearKpa": 0.9,
+    "sourcePage": "GB 50009-2012 表E.5（e5-21）"
+  },
+  {
+    "province": "福建省",
+    "city": "福州市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.7,
+    "hundredYearKpa": 0.85,
+    "sourcePage": "GB 50009-2012 表E.5（e5-20）"
+  },
+  {
+    "province": "福建省",
+    "city": "邵武市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-20）"
+  },
+  {
+    "province": "福建省",
+    "city": "龙岩市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-21）"
+  },
+  {
+    "province": "西藏自治区",
+    "city": "日喀则市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-43）"
+  },
+  {
+    "province": "西藏自治区",
+    "city": "昌都市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-43）"
+  },
+  {
+    "province": "西藏自治区",
+    "city": "那曲市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-43）"
+  },
+  {
+    "province": "贵州省",
+    "city": "毕节市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-41）"
+  },
+  {
+    "province": "贵州省",
+    "city": "贵阳市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-41）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "丹东市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-09）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "兴城市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-09）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "大连市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-09）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "建平县",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "抚顺市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "朝阳市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "本溪市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "沈阳市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "锦州市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.6,
+    "hundredYearKpa": 0.7,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "辽宁省",
+    "city": "鞍山市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-08）"
+  },
+  {
+    "province": "重庆市",
+    "city": "重庆市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.4,
+    "hundredYearKpa": 0.45,
+    "sourcePage": "GB 50009-2012 表E.5（e5-01，人工核对）"
+  },
+  {
+    "province": "陕西省",
+    "city": "安康市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-23）"
+  },
+  {
+    "province": "陕西省",
+    "city": "汉中市",
+    "tenYearKpa": 0.2,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-22）"
+  },
+  {
+    "province": "青海省",
+    "city": "共和县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-27）"
+  },
+  {
+    "province": "青海省",
+    "city": "德令哈市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-26）"
+  },
+  {
+    "province": "青海省",
+    "city": "格尔木市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-27）"
+  },
+  {
+    "province": "青海省",
+    "city": "祁连县",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-26）"
+  },
+  {
+    "province": "青海省",
+    "city": "称多县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.3,
+    "hundredYearKpa": 0.35,
+    "sourcePage": "GB 50009-2012 表E.5（e5-27）"
+  },
+  {
+    "province": "青海省",
+    "city": "西宁市",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-25）"
+  },
+  {
+    "province": "青海省",
+    "city": "达日县",
+    "tenYearKpa": 0.25,
+    "fiftyYearKpa": 0.35,
+    "hundredYearKpa": 0.4,
+    "sourcePage": "GB 50009-2012 表E.5（e5-28）"
+  },
+  {
+    "province": "黑龙江省",
+    "city": "佳木斯市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.65,
+    "hundredYearKpa": 0.75,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "黑龙江省",
+    "city": "北安市",
+    "tenYearKpa": 0.3,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.6,
+    "sourcePage": "GB 50009-2012 表E.5（e5-12）"
+  },
+  {
+    "province": "黑龙江省",
+    "city": "牡丹江市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.5,
+    "hundredYearKpa": 0.55,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "黑龙江省",
+    "city": "鸡西市",
+    "tenYearKpa": 0.4,
+    "fiftyYearKpa": 0.55,
+    "hundredYearKpa": 0.65,
+    "sourcePage": "GB 50009-2012 表E.5（e5-13）"
+  },
+  {
+    "province": "黑龙江省",
+    "city": "齐齐哈尔市",
+    "tenYearKpa": 0.35,
+    "fiftyYearKpa": 0.45,
+    "hundredYearKpa": 0.5,
+    "sourcePage": "GB 50009-2012 表E.5（e5-12）"
+  }
+]

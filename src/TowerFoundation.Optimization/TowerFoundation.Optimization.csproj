@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\TowerFoundation.Calculation\TowerFoundation.Calculation.csproj" />
+  </ItemGroup>
+</Project>

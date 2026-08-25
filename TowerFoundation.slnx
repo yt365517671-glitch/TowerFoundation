@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TowerFoundation.Domain/TowerFoundation.Domain.csproj" />
+    <Project Path="src/TowerFoundation.Calculation/TowerFoundation.Calculation.csproj" />
+    <Project Path="src/TowerFoundation.Optimization/TowerFoundation.Optimization.csproj" />
+    <Project Path="src/TowerFoundation.Application/TowerFoundation.Application.csproj" />
+    <Project Path="src/TowerFoundation.Infrastructure/TowerFoundation.Infrastructure.csproj" />
+    <Project Path="src/TowerFoundation.Licensing/TowerFoundation.Licensing.csproj" />
+    <Project Path="src/TowerFoundation.Desktop/TowerFoundation.Desktop.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TowerFoundation.DesktopSmoke/TowerFoundation.DesktopSmoke.csproj" />
+    <Project Path="tests/TowerFoundation.Tests/TowerFoundation.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\tower-foundation.ico</ApplicationIcon>
+    <AssemblyName>塔基智设</AssemblyName>
+    <RootNamespace>TowerFoundation.Desktop</RootNamespace>
+    <Product>塔基智设</Product>
+    <Description>监控杆与通信塔桅基础离线计算及 AI 辅助工具</Description>
+    <Version>0.9.21</Version>
+    <FileVersion>0.9.21.0</FileVersion>
+    <AssemblyVersion>0.9.21.0</AssemblyVersion>
+    <TowerFoundationChannel Condition="'$(TowerFoundationChannel)' == ''">Development</TowerFoundationChannel>
+    <DefineConstants Condition="'$(TowerFoundationChannel)' == 'Production'">$(DefineConstants);TOWER_FOUNDATION_PRODUCTION</DefineConstants>
+    <StartupObject>TowerFoundation.Desktop.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TowerFoundation.Infrastructure\TowerFoundation.Infrastructure.csproj" />
+    <ProjectReference Include="..\TowerFoundation.Licensing\TowerFoundation.Licensing.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\tower-foundation-logo.png" />
+    <None Remove="Assets\tower-foundation-logo-64.png" />
+    <None Remove="Assets\tower-foundation.ico" />
+    <None Remove="Assets\monitoring-pole-parameter-guide-v1.png" />
+    <Resource Include="Assets\tower-foundation-logo.png" />
+    <Resource Include="Assets\tower-foundation-logo-64.png" />
+    <Resource Include="Assets\tower-foundation.ico" />
+    <Resource Include="Assets\monitoring-pole-parameter-guide-v1.png" />
+  </ItemGroup>
+</Project>

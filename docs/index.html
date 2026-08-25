@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="塔基智设：铁塔、塔桅与监控杆基础设计 Windows 单机辅助软件。">
+  <title>塔基智设 · TowerFoundation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <strong>塔基智设</strong>
+      <div>
+        <a href="#features">功能</a>
+        <a href="#workflow">流程</a>
+        <a href="#boundary">边界</a>
+        <a class="nav-button" href="https://github.com/yt365517671-glitch/TowerFoundation">查看源码</a>
+      </div>
+    </nav>
+    <div class="hero-grid">
+      <section>
+        <p class="eyebrow">Windows · WPF · 本地确定性计算</p>
+        <h1>铁塔与监控杆基础设计，<br><span>从资料到成果一步步完成。</span></h1>
+        <p class="lead">AI 只负责提取带证据的候选；荷载、基础、配筋和工程量始终由本地计算内核完成。联网优先，离线仍可完整手工设计。</p>
+        <div class="actions">
+          <a class="primary" href="https://github.com/yt365517671-glitch/TowerFoundation">GitHub 仓库</a>
+          <a class="secondary" href="architecture.md">架构说明</a>
+        </div>
+        <div class="facts">
+          <span><b>6</b> 类基础</span>
+          <span><b>2</b> 条业务流程</span>
+          <span><b>78/78</b> 完整环境回归</span>
+        </div>
+      </section>
+      <img class="hero-shot" src="images/workflow-entry.png" alt="塔基智设双业务入口">
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="section">
+      <p class="eyebrow">核心能力</p>
+      <h2>傻瓜式流程，专业级边界</h2>
+      <div class="cards">
+        <article><span>01</span><h3>双业务入口</h3><p>通信塔桅与监控杆采用各自荷载形成方式，之后统一进入地勘、方案和成果流程。</p></article>
+        <article><span>02</span><h3>证据化 AI</h3><p>保留文件、页码、原始标注、所在区域、置信度和冲突；低置信字段必须人工确认。</p></article>
+        <article><span>03</span><h3>本地计算内核</h3><p>结构计算不交给模型；无网时仍可手工输入、搜索方案、复算、保存和导出。</p></article>
+        <article><span>04</span><h3>六类基础</h3><p>矩形/圆形独基、筏板、圆形/矩形刚性短柱桩、独立灌注桩，并支持三/四塔脚拓扑。</p></article>
+        <article><span>05</span><h3>监控杆精细建模</h3><p>圆形管、正八边形对角尺寸管和分段横杆逐段计算，禁止用平均壁厚替代。</p></article>
+        <article><span>06</span><h3>可追溯成果</h3><p>生成计算书、DXF、材料表、下料表和工程量；缺参时强制标记复核稿。</p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <img src="images/vision-review.png" alt="视觉候选与人工补录">
+      <div>
+        <p class="eyebrow">AI 候选不是计算结果</p>
+        <h2>识别不出来，就明确交给人。</h2>
+        <p>施工图没有给设备迎风面积或重量时，系统保留空值，不覆盖用户已有输入。采用候选后，未识别项目集中进入第二次人工补录，全部通过本地合理性校验后才能继续。</p>
+        <ul>
+          <li>多 PDF、逐页进度、重试和剩余任务数</li>
+          <li>高置信默认勾选，冲突/低置信要求人工确认</li>
+          <li>识别记录按原图 SHA256 留存并复用</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow">
+      <p class="eyebrow">六步操作</p>
+      <h2>不允许向前越级，允许向后修改。</h2>
+      <div class="steps">
+        <span>工程类型</span><i>→</i><span>项目与基础</span><i>→</i><span>地勘参数</span><i>→</i><span>荷载输入</span><i>→</i><span>基础方案</span><i>→</i><span>成果与记录</span>
+      </div>
+      <p>退回历史步骤后保留原始输入，并自动作废后续方案和成果；跨流程浏览始终显示“回到当前执行流程”。</p>
+    </section>
+
+    <section class="section gallery">
+      <div><img src="images/tower-loads.png" alt="塔桅荷载输入"><p>塔桅荷载与组合输入</p></div>
+      <div><img src="images/results-and-materials.png" alt="成果与材料表"><p>配筋、材料和工程量成果</p></div>
+    </section>
+
+    <section id="boundary" class="section boundary">
+      <div>
+        <p class="eyebrow">公开边界</p>
+        <h2>源码公开，不等于把敏感资料公开。</h2>
+      </div>
+      <div class="boundary-grid">
+        <article><h3>仓库包含</h3><p>C# / WPF 源码、确定性计算模块、测试、构建配置、公开截图和设计文档。</p></article>
+        <article><h3>仓库不包含</h3><p>API Key、根私钥、客户授权、规范 PDF、企业荷载数据、施工图、地勘报告、旧 Excel、商业字体和用户项目。</p></article>
+        <article><h3>工程使用</h3><p>软件输出必须经有资质的专业人员复核，不能直接替代施工图审查、专项设计或法定审批。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>塔基智设 TowerFoundation</strong>
+    <p>Source-available for review · 正式工程使用需授权并经专业复核</p>
+  </footer>
+</body>
+</html>

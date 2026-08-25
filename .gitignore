@@ -1,0 +1,53 @@
+# Build and IDE output
+**/bin/
+**/obj/
+.vs/
+.vscode/
+artifacts/
+
+# Local SDK, NuGet and generated work
+.dotnet/
+.dotnet-home/
+.dotnet-cli-home/
+.nuget/
+tmp/
+output/
+release/
+development/
+license-authority/
+**/__pycache__/
+*_wpftmp.csproj
+
+# Local and sensitive state
+*.user
+*.suo
+*.tjproj
+*.tfdproj.json
+*.tjzlic
+*.tjzroot
+*.jwdlic
+settings.json
+license-state.dat
+root-authority.json
+issuer-identity.json
+license-history.json
+projects/
+
+# Non-redistributable or project source material
+*.pdf
+*.xls
+*.xlsx
+*.csv
+*.shx
+*.traineddata
+规范标准/
+标准图集荷载库/
+地勘/
+学习参考的CAD图纸/
+庆化大道和周祖大道交通技术监控安装项目-施工图（260129）/
+
+# Binaries and archives are published separately by the maintainer
+*.exe
+*.dll
+*.pdb
+*.zip

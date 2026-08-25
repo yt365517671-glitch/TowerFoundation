@@ -1,0 +1,62 @@
+<Window x:Class="TowerFoundation.Desktop.LicenseActivationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="塔基智设 · 离线授权"
+        Width="680" Height="620" MinWidth="600" MinHeight="520"
+        Icon="Assets/tower-foundation.ico"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResize">
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="116" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="76" />
+        </Grid.RowDefinitions>
+        <Border Background="{StaticResource BrandGradientBrush}">
+            <Grid Margin="28,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="64" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Width="54" Height="54" Padding="5" Background="White" CornerRadius="14">
+                    <Image Source="Assets/tower-foundation-logo.png" Stretch="Uniform" />
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="塔基智设离线授权" Foreground="White" FontSize="24" FontWeight="Bold" />
+                    <TextBlock Margin="0,5,0,0" Text="无需联网激活 · 授权绑定本机 · 未授权仍可浏览界面"
+                               Foreground="#C9D0E5" FontSize="13" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="28,24">
+                <Border Padding="14" Background="#FFF7E8" BorderBrush="#F3D28A" BorderThickness="1" CornerRadius="10">
+                    <TextBlock x:Name="AssessmentText" TextWrapping="Wrap" Foreground="#8A5700" />
+                </Border>
+                <TextBlock Margin="0,20,0,7" Text="本机机器码" Style="{StaticResource FieldLabelStyle}" />
+                <Grid>
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="108"/></Grid.ColumnDefinitions>
+                    <TextBox x:Name="MachineCodeBox" IsReadOnly="True" FontFamily="Consolas" />
+                    <Button Grid.Column="1" Margin="10,0,0,0" Content="复制机器码" Click="CopyMachineCode_Click" />
+                </Grid>
+                <TextBlock Margin="0,18,0,7" Text="客户授权码" Style="{StaticResource FieldLabelStyle}" />
+                <TextBox x:Name="LicenseTokenBox" Height="150" AcceptsReturn="True" TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top"
+                         ToolTip="粘贴完整授权码，或打开签发员提供的 .tjzlic 文件" />
+                <StackPanel Margin="0,12,0,0" Orientation="Horizontal">
+                    <Button Content="打开授权文件" Click="OpenLicenseFile_Click" />
+                    <Button Content="清空" Click="ClearToken_Click" Margin="0" />
+                </StackPanel>
+                <TextBlock x:Name="ResultText" Margin="0,15,0,0" TextWrapping="Wrap"
+                           Foreground="{StaticResource MutedTextBrush}" />
+            </StackPanel>
+        </ScrollViewer>
+        <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+            <Grid Margin="24,0">
+                <Button x:Name="PreviewButton" HorizontalAlignment="Left" Content="继续预览"
+                        Click="ContinuePreview_Click" />
+                <Button HorizontalAlignment="Right" Content="验证并启用正式功能"
+                        Style="{StaticResource PrimaryButtonStyle}" Click="Activate_Click" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

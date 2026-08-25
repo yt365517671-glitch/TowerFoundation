@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>TowerFoundation.LicenseTool</RootNamespace>
+    <LicenseToolRole Condition="'$(LicenseToolRole)' == ''">Issuer</LicenseToolRole>
+    <AssemblyName Condition="'$(LicenseToolRole)' == 'Issuer'">塔基智设-授权码生成器</AssemblyName>
+    <AssemblyName Condition="'$(LicenseToolRole)' == 'RootManager'">塔基智设-根授权管理器</AssemblyName>
+    <Product Condition="'$(LicenseToolRole)' == 'Issuer'">塔基智设授权码生成器</Product>
+    <Product Condition="'$(LicenseToolRole)' == 'RootManager'">塔基智设根授权管理器</Product>
+    <Description>塔基智设完全离线授权工具</Description>
+    <Version>0.9.21</Version>
+    <ApplicationIcon>..\TowerFoundation.Desktop\Assets\tower-foundation.ico</ApplicationIcon>
+    <DefineConstants Condition="'$(LicenseToolRole)' == 'RootManager'">$(DefineConstants);TOWER_FOUNDATION_ROOT_MANAGER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TowerFoundation.Licensing\TowerFoundation.Licensing.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\TowerFoundation.Desktop\Assets\tower-foundation-logo.png"
+              Link="Assets\tower-foundation-logo.png" />
+    <Resource Include="..\TowerFoundation.Desktop\Assets\tower-foundation.ico"
+              Link="Assets\tower-foundation.ico" />
+  </ItemGroup>
+</Project>
